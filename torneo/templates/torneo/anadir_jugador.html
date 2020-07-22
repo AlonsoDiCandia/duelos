@@ -1,0 +1,39 @@
+{% block content %}
+	<div class="content container">
+		<h1 style="text-align: center;">Añadir Jugador</h1>
+		<div class="row">
+			<div class="col">
+				<form action="{% url 'añadir_jugador' %}" method="POST" style="display: block; margin: auto;">
+					{% csrf_token %}
+					<div class="fieldWrapper">
+					    {{ new_menu.nombre.errors }}
+					    <label for="{{ new_menu.nombre.id_for_label }}">Nombre:</label>
+					    {{ new_menu.nombre }}
+					</div>
+					<div class="fieldWrapper">
+					    {{ new_menu.duelos_jugados.errors }}
+					    <label for="{{ new_menu.duelos_jugados.id_for_label }}">duelos_jugados:</label>
+					    {{ new_menu.duelos_jugados }}
+					</div>
+					<div class="fieldWrapper">
+					    {{ new_menu.victorias.errors }}
+					    <label for="{{ new_menu.victorias.id_for_label }}">victorias:</label>
+					    {{ new_menu.victorias }}
+					</div>
+					<div class="fieldWrapper">
+					    {{ new_menu.derrotas.errors }}
+					    <label for="{{ new_menu.derrotas.id_for_label }}">derrotas:</label>
+					    {{ new_menu.derrotas }}
+					</div>
+
+
+					<!-- Submit -->
+					<div class="fieldButton">
+						<input type="submit" value="Crear Jugador"></input>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		</div>
+{% endblock %}

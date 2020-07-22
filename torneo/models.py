@@ -4,6 +4,6 @@ from django.db import models
 
 class Jugador(models.Model):	
 	nombre = models.CharField(max_length=250)
-	duelos_jugados = models.IntegerField()
-	victorias = models.IntegerField()
-	derrotas = models.IntegerField()
+	duelos_jugados = models.IntegerField(default=0)
+	victorias = models.IntegerField(default=0)
+	derrotas = models.IntegerField(default=0)
